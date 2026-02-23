@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SMK Radar | Sekolah Merah Putih</title>
+    
+    <!-- Google Font & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- CSS Eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+        <div class="logo">
+            <img id="logoImage" src="LOGO Perusahaan.jpg" alt="Logo SMK Radar" class="logo-img" onerror="this.src='https://via.placeholder.com/150/FF0000/FFFFFF?text=SMK'">
+            <h1>SMK <span id="logoText">Radar</span></h1>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Beranda</a>
+            <a href="#visi-misi">Visi Misi</a>
+            <a href="#jurusan">Jurusan</a>
+            <a href="#ekskul">Ekstrakurikuler</a>
+            <a href="#prestasi">Prestasi</a>
+            <a href="#spmb">SPMB</a>
+            <a href="#kontak">Kontak</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- ========== TOMBOL ADMIN RAPIH ========== -->
+    <div class="admin-button-container">
+        <button class="admin-button" id="adminLoginBtn">
+            <i class="fas fa-user-shield"></i>
+            <span>Admin Panel</span>
+        </button>
+    </div>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Selamat Datang di <span id="heroTitle">SMK Radar</span></h2>
+            <p id="heroDescription">Sekolah Menengah Kejuruan unggulan dengan 4 jurusan kompeten dan puluhan ekstrakurikuler kreatif. Siapkan masa depanmu bersama kami!</p>
+            <a href="#spmb" class="btn">Info PPDB <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- ========== VISI MISI ========== -->
+    <section id="visi-misi">
+        <h2 class="section-title">Visi & Misi</h2>
+        <div class="visi-misi-container">
+            <div class="visi-card">
+                <i class="fas fa-eye"></i>
+                <h3>Visi</h3>
+                <p id="visiText">Menjadi SMK unggulan yang menghasilkan lulusan berkarakter, kompeten, dan siap bersaing di era global dengan berlandaskan iman dan takwa.</p>
+            </div>
+            <div class="misi-card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Misi</h3>
+                <ul id="misiList">
+                    <li>Menyelenggarakan pendidikan vokasi berkualitas sesuai kebutuhan industri.</li>
+                    <li>Membentuk peserta didik yang disiplin, kreatif, dan berjiwa wirausaha.</li>
+                    <li>Mengembangkan sarana prasarana pembelajaran berbasis teknologi.</li>
+                    <li>Menjalin kerjasama dengan dunia usaha dan industri.</li>
+                    <li>Menanamkan nilai-nilai kebangsaan dan karakter Pancasila.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== JURUSAN ========== -->
+    <section id="jurusan">
+        <h2 class="section-title">Kompetensi Keahlian</h2>
+        <div class="jurusan-grid" id="jurusanContainer"></div>
+    </section>
+
+    <!-- ========== EKSTRAKURIKULER ========== -->
+    <section id="ekskul">
+        <h2 class="section-title">Ekstrakurikuler <span style="color: #C62828;" id="ekskulCount">30+</span></h2>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="olahraga">Olahraga</button>
+            <button class="filter-btn" data-filter="kesenian">Kesenian</button>
+            <button class="filter-btn" data-filter="akademik">Akademik</button>
+            <button class="filter-btn" data-filter="keterampilan">Keterampilan</button>
+        </div>
+
+        <div class="ekskul-grid" id="ekskulContainer"></div>
+    </section>
+
+    <!-- ========== PRESTASI ========== -->
+    <section id="prestasi">
+        <h2 class="section-title">Prestasi Terbaru</h2>
+        <div class="prestasi-grid" id="prestasiContainer"></div>
+    </section>
+
+    <!-- ========== SPMB ========== -->
+    <section id="spmb">
+        <h2 class="section-title">Penerimaan Peserta Didik Baru <br> <span style="font-size: 1.5rem;" id="tahunAjaran">Tahun Ajaran 2025/2026</span></h2>
+        <div class="spmb-container" id="spmbContainer"></div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="#" class="btn" id="daftarOnlineBtn">Daftar Online <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- ========== GALERI ========== -->
+    <section id="galeri">
+        <h2 class="section-title">Galeri Kegiatan</h2>
+        <div class="gallery-preview" id="galeriContainer"></div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="kontak">
+        <div class="social-icons" id="socialIcons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p><i class="fas fa-map-marker-alt"></i> <span id="alamat">Jl. Pendidikan No. 123, Jakarta</span></p>
+        <p><i class="fas fa-phone-alt"></i> <span id="telepon">(021) 1234-5678</span> | <i class="fas fa-envelope"></i> <span id="email">info@smkradar.sch.id</span></p>
+        <p style="margin-top:1.5rem; font-size:0.9rem;">&copy; 2025 SMK Radar. Created with <i class="fas fa-heart" style="color:#C62828;"></i> untuk tugas interaktif.</p>
+    </footer>
+
+    <!-- ========== MODAL LOGIN ADMIN ========== -->
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <span class="close" onclick="closeModal('adminLoginModal')">&times;</span>
+            <h2 style="color: #B71C1C;"><i class="fas fa-lock"></i> Login Admin</h2>
+            <form id="loginForm" onsubmit="event.preventDefault(); handleLogin();">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" class="form-control" placeholder="Masukkan username" value="admin" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Masukkan password" value="smkradar123" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; background: #B71C1C; color: white; margin-top: 20px;">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========== MODAL PANEL ADMIN ========== -->
+    <div id="adminPanelModal" class="modal">
+        <div class="modal-content admin-panel">
+            <span class="close" onclick="closeModal('adminPanelModal')">&times;</span>
+            <h2 style="color: #B71C1C;"><i class="fas fa-cog"></i> Panel Admin SMK Radar</h2>
+            
+            <div class="admin-tabs">
+                <button class="tab-btn active" onclick="showTab('logo')"><i class="fas fa-image"></i> Logo</button>
+                <button class="tab-btn" onclick="showTab('hero')"><i class="fas fa-home"></i> Hero</button>
+                <button class="tab-btn" onclick="showTab('visimisi')"><i class="fas fa-eye"></i> Visi Misi</button>
+                <button class="tab-btn" onclick="showTab('jurusan')"><i class="fas fa-network-wired"></i> Jurusan</button>
+                <button class="tab-btn" onclick="showTab('ekskul')"><i class="fas fa-futbol"></i> Ekskul</button>
+                <button class="tab-btn" onclick="showTab('prestasi')"><i class="fas fa-trophy"></i> Prestasi</button>
+                <button class="tab-btn" onclick="showTab('spmb')"><i class="fas fa-graduation-cap"></i> SPMB</button>
+                <button class="tab-btn" onclick="showTab('kontak')"><i class="fas fa-address-book"></i> Kontak</button>
+            </div>
+            
+            <!-- TAB LOGO -->
+            <div id="tab-logo" class="tab-content active">
+                <h3>Pengaturan Logo</h3>
+                <div class="form-group">
+                    <label>URL Gambar Logo:</label>
+                    <input type="text" id="logoUrlInput" class="form-control" placeholder="https://example.com/logo.png">
+                </div>
+                <div class="form-group">
+                    <label>Teks Logo:</label>
+                    <input type="text" id="logoTextInput" class="form-control" value="Radar">
+                </div>
+                <button class="btn" onclick="saveLogo()">Simpan Logo</button>
+            </div>
+            
+            <!-- TAB HERO -->
+            <div id="tab-hero" class="tab-content">
+                <h3>Pengaturan Hero Section</h3>
+                <div class="form-group">
+                    <label>Judul Hero:</label>
+                    <input type="text" id="heroTitleInput" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Deskripsi Hero:</label>
+                    <textarea id="heroDescInput" class="form-control" rows="3"></textarea>
+                </div>
+                <button class="btn" onclick="saveHero()">Simpan Hero</button>
+            </div>
+            
+            <!-- TAB VISI MISI -->
+            <div id="tab-visimisi" class="tab-content">
+                <h3>Pengaturan Visi & Misi</h3>
+                <div class="form-group">
+                    <label>Visi:</label>
+                    <textarea id="visiInput" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Misi (pisahkan dengan titik koma ;):</label>
+                    <textarea id="misiInput" class="form-control" rows="5" placeholder="Misi 1; Misi 2; Misi 3"></textarea>
+                </div>
+                <button class="btn" onclick="saveVisiMisi()">Simpan Visi Misi</button>
+            </div>
+            
+            <!-- TAB JURUSAN -->
+            <div id="tab-jurusan" class="tab-content">
+                <h3>Daftar Jurusan</h3>
+                <div id="jurusanList" class="admin-list"></div>
+                <button class="btn add-btn" onclick="addJurusan()"><i class="fas fa-plus"></i> Tambah Jurusan</button>
+            </div>
+            
+            <!-- TAB EKSKUL -->
+            <div id="tab-ekskul" class="tab-content">
+                <h3>Daftar Ekstrakurikuler</h3>
+                <div id="ekskulList" class="admin-list"></div>
+                <button class="btn add-btn" onclick="addEkskul()"><i class="fas fa-plus"></i> Tambah Ekstrakurikuler</button>
+            </div>
+            
+            <!-- TAB PRESTASI -->
+            <div id="tab-prestasi" class="tab-content">
+                <h3>Daftar Prestasi</h3>
+                <div id="prestasiList" class="admin-list"></div>
+                <button class="btn add-btn" onclick="addPrestasi()"><i class="fas fa-plus"></i> Tambah Prestasi</button>
+            </div>
+            
+            <!-- TAB SPMB -->
+            <div id="tab-spmb" class="tab-content">
+                <h3>Pengaturan SPMB</h3>
+                <div class="form-group">
+                    <label>Tahun Ajaran:</label>
+                    <input type="text" id="tahunAjaranInput" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Periode Pendaftaran:</label>
+                    <input type="text" id="pendaftaranInput" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Persyaratan:</label>
+                    <textarea id="persyaratanInput" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Nama Kontak Person:</label>
+                    <input type="text" id="kontakNamaInput" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Nomor Kontak Person:</label>
+                    <input type="text" id="kontakNomorInput" class="form-control">
+                </div>
+                <button class="btn" onclick="saveSPMB()">Simpan SPMB</button>
+            </div>
+            
+            <!-- TAB KONTAK -->
+            <div id="tab-kontak" class="tab-content">
+                <h3>Pengaturan Kontak</h3>
+                <div class="form-group">
+                    <label>Alamat:</label>
+                    <input type="text" id="alamatInput" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Telepon:</label>
+                    <input type="text" id="teleponInput" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="emailInput" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Instagram (URL):</label>
+                    <input type="text" id="instagramInput" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Facebook (URL):</label>
+                    <input type="text" id="facebookInput" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>YouTube (URL):</label>
+                    <input type="text" id="youtubeInput" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>TikTok (URL):</label>
+                    <input type="text" id="tiktokInput" class="form-control">
+                </div>
+                <button class="btn" onclick="saveKontak()">Simpan Kontak</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== SCRIPT DATA DEFAULT ========== -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
